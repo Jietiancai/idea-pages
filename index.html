@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>新点小工具 V1.0 | Chrome 扩展工具面板</title>
+    <meta
+      name="description"
+      content="新点小工具 V1.0 是面向新点 OA 与项目管理场景的 Chrome 扩展，包含工时统计、快速文案、工时计算器和预算计算器。"
+    >
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="新点小工具 V1.0">
+    <meta property="og:description" content="Chrome 扩展浮动工具面板，覆盖日常记录、文案、计算与预算管理。">
+    <meta property="og:image" content="assets/icon128.png">
+    <link rel="icon" href="assets/icon48.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="新点小工具首页">
+        <img src="assets/icon48.png" alt="" width="32" height="32">
+        <span>新点小工具</span>
+      </a>
+      <nav class="site-nav" aria-label="页面导航">
+        <a href="#features">功能特性</a>
+        <a href="#workflow">使用流程</a>
+        <a href="#about">关于</a>
+      </nav>
+      <div class="header-actions">
+        <a class="primary-link" href="downloads/dist-新点小工具V1.0.zip" download>
+          <svg aria-hidden="true"><use href="#icon-download"></use></svg>
+          <span>下载插件</span>
+        </a>
+      </div>
+      <button class="menu-button" type="button" data-menu-button aria-label="打开导航">
+        <svg aria-hidden="true"><use href="#icon-menu"></use></svg>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero section-band">
+        <div class="hero-copy">
+          <h1>新点小工具 V1.0</h1>
+          <p class="hero-subtitle">Chrome 扩展，浮动工具面板。</p>
+          <p class="hero-text">
+            面向新点 OA 与项目管理的轻量工具集，把工时统计、常用文案、任务工时与预算汇总放在当前页面旁边。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="downloads/dist-新点小工具V1.0.zip" download>
+              <svg aria-hidden="true"><use href="#icon-download"></use></svg>
+              <span>下载 dist 压缩包</span>
+            </a>
+            <a class="button button-secondary" href="#features">
+              <svg aria-hidden="true"><use href="#icon-eye"></use></svg>
+              <span>查看功能特性</span>
+            </a>
+          </div>
+          <div class="trust-row" aria-label="产品特点">
+            <span>
+              <svg aria-hidden="true"><use href="#icon-shield"></use></svg>
+              纯前端静态页面
+            </span>
+            <span>原插件样式预览</span>
+            <span>内置安装包下载</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="实际插件工具面板预览">
+          <iframe
+            class="plugin-preview-frame"
+            src="plugin-preview.html"
+            title="新点小工具实际插件界面预览"
+            loading="eager"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="section-heading">
+          <h2>四大核心工具</h2>
+          <p>覆盖日常记录、文案、计算与预算管理，专注实用与效率。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-icon"><svg aria-hidden="true"><use href="#icon-clock"></use></svg></span>
+            <h3>工时统计</h3>
+            <p>从日志月历页读取填报情况，统计标准工时、实填工时、工时差额和未填工作日。</p>
+            <ul>
+              <li>识别工作日、周末、休假与补班</li>
+              <li>保存单月月报并生成历史列表</li>
+              <li>下载单月或汇总 Excel 表格</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg aria-hidden="true"><use href="#icon-file"></use></svg></span>
+            <h3>快速文案</h3>
+            <p>沉淀常用文本和回复模板，支持搜索、分组、一键复制与填入当前编辑区域。</p>
+            <ul>
+              <li>按分组管理常用文案</li>
+              <li>支持搜索与快速筛选</li>
+              <li>兼容输入框、文本域和 iframe 场景</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg aria-hidden="true"><use href="#icon-calculator"></use></svg></span>
+            <h3>工时计算器</h3>
+            <p>在设计任务页面读取任务名称与预计工时，保存后用于跟踪任务填写进度。</p>
+            <ul>
+              <li>自动扫描设计任务列表</li>
+              <li>支持选中保存和重复识别</li>
+              <li>按小时、人天规则汇总结果</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon"><svg aria-hidden="true"><use href="#icon-wallet"></use></svg></span>
+            <h3>预算计算器</h3>
+            <p>读取任务详情中的项目、任务、总额与日志明细，按月份沉淀预算记录。</p>
+            <ul>
+              <li>常驻保存整月日志</li>
+              <li>识别跨月任务并按当月工时分摊</li>
+              <li>汇总已保存预算并提示异常值</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow section-band" id="workflow">
+        <div class="section-heading">
+          <h2>使用流程</h2>
+          <p>从读取页面数据到导出汇总，保持在当前工作页面内完成。</p>
+        </div>
+        <div class="flow">
+          <article class="flow-step">
+            <span>1</span>
+            <svg aria-hidden="true"><use href="#icon-folder"></use></svg>
+            <h3>读取当月日志</h3>
+            <p>进入日志月历页，面板自动识别日期、类型、工时与日志入口。</p>
+          </article>
+          <article class="flow-step">
+            <span>2</span>
+            <svg aria-hidden="true"><use href="#icon-save"></use></svg>
+            <h3>保存与沉淀</h3>
+            <p>把月报、文案、任务或预算保存到浏览器本地存储。</p>
+          </article>
+          <article class="flow-step">
+            <span>3</span>
+            <svg aria-hidden="true"><use href="#icon-layout"></use></svg>
+            <h3>日常使用</h3>
+            <p>在浮动面板中快速切换工具，减少页面跳转和重复录入。</p>
+          </article>
+          <article class="flow-step">
+            <span>4</span>
+            <svg aria-hidden="true"><use href="#icon-upload"></use></svg>
+            <h3>导出月度汇总</h3>
+            <p>下载单月或区间汇总表，便于提交、核对和归档。</p>
+          </article>
+          <article class="flow-step">
+            <span>5</span>
+            <svg aria-hidden="true"><use href="#icon-check"></use></svg>
+            <h3>提交与归档</h3>
+            <p>把记录、清单和预算结果同步到团队既有流程。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about section-band" id="about">
+        <div class="about-layout">
+          <div>
+            <h2>为真实流程做的小工具</h2>
+            <p>
+              新点小工具 V1.0 运行在浏览器当前页面，数据默认存放在 Chrome 本地存储中。它更像一个贴在工作台旁边的小面板，
+              帮你把每日记录、月度汇总、常用文案和预算核算收束到同一个入口。
+            </p>
+          </div>
+          <div class="about-facts">
+            <span><b>Manifest V3</b><small>Chrome 扩展架构</small></span>
+            <span><b>4</b><small>核心工具模块</small></span>
+            <span><b>V1.0</b><small>当前发布版本</small></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <img src="assets/icon48.png" alt="" width="28" height="28">
+        <span>新点小工具 <small>V1.0</small></span>
+      </a>
+      <p>Chrome 扩展 · 浮动工具面板 · 提升 OA 与项目管理效率</p>
+      <a href="downloads/dist-新点小工具V1.0.zip" download>
+        <svg aria-hidden="true"><use href="#icon-download"></use></svg>
+        下载插件
+      </a>
+    </footer>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+    <svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M12 2.6a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.2-.3-4.6-1.1-4.6-4.8 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.3.1-2.6 0 0 .9-.3 2.8 1a9.7 9.7 0 0 1 5.1 0c1.9-1.3 2.8-1 2.8-1 .5 1.3.2 2.3.1 2.6.7.7 1 1.5 1 2.6 0 3.7-2.3 4.5-4.6 4.8.4.3.7 1 .7 2v2.5c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.6Z"/>
+      </symbol>
+      <symbol id="icon-share" viewBox="0 0 24 24">
+        <path d="M8.5 12.9 15.4 17M15.4 7 8.5 11.1"/>
+        <circle cx="6" cy="12" r="2.5"/>
+        <circle cx="17.5" cy="6" r="2.5"/>
+        <circle cx="17.5" cy="18" r="2.5"/>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </symbol>
+      <symbol id="icon-minus" viewBox="0 0 24 24">
+        <path d="M5 12h14"/>
+      </symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14"/>
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24">
+        <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14"/>
+      </symbol>
+      <symbol id="icon-eye" viewBox="0 0 24 24">
+        <path d="M2.8 12s3.3-6 9.2-6 9.2 6 9.2 6-3.3 6-9.2 6-9.2-6-9.2-6Z"/>
+        <circle cx="12" cy="12" r="2.7"/>
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 21s7-3.4 7-10V5.5L12 3 5 5.5V11c0 6.6 7 10 7 10Z"/>
+        <path d="m9 12 2 2 4-4"/>
+      </symbol>
+      <symbol id="icon-star" viewBox="0 0 24 24">
+        <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z"/>
+      </symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24">
+        <path d="M8 4h8l-1.2 5.2 3.2 3.2v1.4H6v-1.4l3.2-3.2L8 4Zm4 10v6"/>
+      </symbol>
+      <symbol id="icon-settings" viewBox="0 0 24 24">
+        <path d="M12 8.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z"/>
+        <path d="M19.4 15a8 8 0 0 0 .1-1.1l2-1.5-2-3.4-2.4 1a7.2 7.2 0 0 0-1.8-1L15 6.5h-4L10.6 9a7.2 7.2 0 0 0-1.8 1l-2.4-1-2 3.4 2 1.5a8 8 0 0 0 .1 1.1l-2 1.5 2 3.4 2.4-1a7.2 7.2 0 0 0 1.8 1l.4 2.5h4l.4-2.5a7.2 7.2 0 0 0 1.8-1l2.4 1 2-3.4-2.3-1.5Z"/>
+      </symbol>
+      <symbol id="icon-x" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18"/>
+      </symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5"/>
+        <path d="M12 7.5V12l3.2 1.9"/>
+      </symbol>
+      <symbol id="icon-file" viewBox="0 0 24 24">
+        <path d="M7 3h7l4 4v14H7V3Z"/>
+        <path d="M14 3v5h5M9.5 12h5M9.5 16h5"/>
+      </symbol>
+      <symbol id="icon-calculator" viewBox="0 0 24 24">
+        <rect x="6" y="3.5" width="12" height="17" rx="2"/>
+        <path d="M9 7h6M9 11h.1M12 11h.1M15 11h.1M9 15h.1M12 15h.1M15 15h.1"/>
+      </symbol>
+      <symbol id="icon-wallet" viewBox="0 0 24 24">
+        <path d="M5 7h13a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h12v3"/>
+        <path d="M16 13h4M12 10v7M9 10h6M9.5 13.5h5"/>
+      </symbol>
+      <symbol id="icon-refresh" viewBox="0 0 24 24">
+        <path d="M20 6v5h-5M4 18v-5h5"/>
+        <path d="M18.2 9A7 7 0 0 0 6.6 6.6L4 9m16 6-2.6 2.4A7 7 0 0 1 5.8 15"/>
+      </symbol>
+      <symbol id="icon-folder" viewBox="0 0 24 24">
+        <path d="M3 6.5h6l2 2H21v9.5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5Z"/>
+      </symbol>
+      <symbol id="icon-save" viewBox="0 0 24 24">
+        <path d="M5 4h12l2 2v14H5V4Z"/>
+        <path d="M8 4v6h8V4M8 20v-6h8v6"/>
+      </symbol>
+      <symbol id="icon-layout" viewBox="0 0 24 24">
+        <rect x="4" y="4" width="7" height="7" rx="2"/>
+        <rect x="13" y="4" width="7" height="7" rx="2"/>
+        <rect x="4" y="13" width="7" height="7" rx="2"/>
+        <rect x="13" y="13" width="7" height="7" rx="2"/>
+      </symbol>
+      <symbol id="icon-upload" viewBox="0 0 24 24">
+        <path d="M12 16V5m0 0-4 4m4-4 4 4M5 20h14"/>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="m5 12 4.2 4.2L19 6.8"/>
+      </symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24">
+        <rect x="8" y="8" width="11" height="12" rx="2"/>
+        <path d="M5 16H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+      </symbol>
+    </svg>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

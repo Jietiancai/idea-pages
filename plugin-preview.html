@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>新点小工具界面预览</title>
+    <link rel="stylesheet" href="assets/plugin-content.css">
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      body {
+        background: transparent;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+      }
+
+      #ep-tool-panel {
+        bottom: 58px;
+        right: 70px;
+      }
+
+      .preview-oa-page {
+        background: #ffffff;
+        border: 1px solid #d7dde8;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(24, 39, 75, 0.07);
+        height: 470px;
+        position: absolute;
+        opacity: 0.76;
+        right: 34px;
+        top: 50px;
+        width: 560px;
+      }
+
+      .preview-oa-page::before {
+        border-bottom: 1px solid #e5eaf2;
+        content: "";
+        height: 48px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .preview-oa-lines {
+        display: grid;
+        gap: 14px;
+        padding: 78px 34px 30px;
+      }
+
+      .preview-oa-lines i {
+        background: #eef2f7;
+        border-radius: 4px;
+        display: block;
+        height: 20px;
+      }
+
+      .preview-oa-lines i:nth-child(2n) {
+        margin-left: 68px;
+      }
+
+      .preview-oa-lines i:nth-child(3n) {
+        width: 76%;
+      }
+
+      @media (max-width: 760px) {
+        #ep-tool-panel {
+          bottom: 18px;
+          right: 18px;
+        }
+
+        .preview-oa-page {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="preview-oa-page" aria-hidden="true">
+      <div class="preview-oa-lines">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+
+    <div id="ep-tool-panel" class="ep-tool-panel">
+      <div id="ep-panel-resize-handle" class="ep-panel-resize-handle" title="拖动调整高度"></div>
+      <div class="ep-tool-header">
+        <div class="ep-brand">
+          <div class="ep-brand-mark">
+            <span class="ep-brand-e">E</span>
+            <span class="ep-brand-red"></span>
+          </div>
+          <div class="ep-brand-title">
+            <div class="ep-brand-name">新点小工具</div>
+            <div class="ep-brand-version">V1.0</div>
+          </div>
+        </div>
+        <div class="ep-header-actions">
+          <button id="ep-btn-hide" class="ep-icon-btn" title="隐藏面板" aria-label="隐藏面板">
+            <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>
+          </button>
+        </div>
+      </div>
+      <div class="ep-tool-layout" id="ep-tool-layout">
+        <aside class="ep-tool-sidebar">
+          <button class="ep-nav-item is-active" data-tool="workhours">
+            <span class="ep-nav-kicker"><svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+            <span class="ep-nav-text">工时统计</span>
+            <span class="ep-nav-version">v1.0</span>
+          </button>
+          <button class="ep-nav-item" data-tool="quickcopy">
+            <span class="ep-nav-kicker"><svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="M9 13h6"></path><path d="M9 17h6"></path><path d="M9 9h1"></path></svg></span>
+            <span class="ep-nav-text">快速文案</span>
+            <span class="ep-nav-version">v1.0</span>
+          </button>
+          <button class="ep-nav-item" data-tool="taskcalc">
+            <span class="ep-nav-kicker"><svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M8 7h8"></path><path d="M8 11h2"></path><path d="M12 11h2"></path><path d="M16 11h0"></path><path d="M8 15h2"></path><path d="M12 15h2"></path><path d="M16 15h0"></path></svg></span>
+            <span class="ep-nav-text">工时计算器</span>
+            <span class="ep-nav-version">v1.0</span>
+          </button>
+          <button class="ep-nav-item" data-tool="budgetcalc">
+            <span class="ep-nav-kicker"><svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V5a2 2 0 0 0-2-2H6a3 3 0 0 0 0 6h14v10a2 2 0 0 1-2 2H6a3 3 0 0 1-3-3V6"></path><path d="M16 14h.01"></path></svg></span>
+            <span class="ep-nav-text">预算计算器</span>
+            <span class="ep-nav-version">v1.0</span>
+          </button>
+        </aside>
+        <main class="ep-tool-main">
+          <section id="ep-tool-workhours" class="ep-tool-section is-active">
+            <div class="ep-section-head">
+              <div>
+                <h3>工时统计 <span>v1.0</span></h3>
+                <p>当前页面自动生成，保存后在下方列表查看</p>
+              </div>
+            </div>
+            <div id="ep-workhour-report">
+              <div class="ep-report-title">
+                <strong>2026年7月实时统计</strong>
+                <span>每日月报明细已隐藏，保存后在下方月报栏查看。</span>
+              </div>
+              <div class="ep-stats-cards">
+                <div class="ep-stat-card ep-stat-primary">
+                  <div class="ep-stat-value">23</div>
+                  <div class="ep-stat-label">标准工作天数</div>
+                </div>
+                <div class="ep-stat-card ep-stat-success">
+                  <div class="ep-stat-value">20</div>
+                  <div class="ep-stat-label">实际填工时天数</div>
+                </div>
+                <div class="ep-stat-card ep-stat-info">
+                  <div class="ep-stat-value">184h</div>
+                  <div class="ep-stat-label">月标准总工时</div>
+                </div>
+                <div class="ep-stat-card ep-stat-warning">
+                  <div class="ep-stat-value">160h</div>
+                  <div class="ep-stat-label">实际总工时</div>
+                </div>
+                <div class="ep-stat-card ep-stat-danger">
+                  <div class="ep-stat-value ep-text-danger">-24.0h</div>
+                  <div class="ep-stat-label">工时差额</div>
+                </div>
+              </div>
+              <div class="ep-info-row">
+                <span>法定休 <strong>0</strong> 天</span>
+                <span>调休上班 <strong>0</strong> 天</span>
+                <span>周末休息 <strong>8</strong> 天</span>
+                <span>请假 <strong>0</strong> 天</span>
+                <span>工作日未填 <strong>3</strong> 天</span>
+              </div>
+            </div>
+            <div id="ep-saved-reports" class="ep-saved-reports">
+              <div class="ep-saved-headbar">
+                <div class="ep-saved-title">
+                  <strong>已保存月报</strong>
+                  <span>2 份</span>
+                </div>
+                <div class="ep-saved-head-actions">
+                  <button id="ep-month-save" class="ep-btn ep-btn-primary" data-action="save-current">
+                    <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><path d="M17 21v-8H7v8"></path><path d="M7 3v5h8"></path></svg>
+                    <span>保存月报</span>
+                  </button>
+                  <button id="ep-saved-download" class="ep-btn" data-action="download-all">
+                    <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+                    <span>下载总表</span>
+                  </button>
+                </div>
+              </div>
+              <div class="ep-saved-body">
+                <article class="ep-saved-item" data-year-month="2026-07">
+                  <div class="ep-saved-item-head">
+                    <button class="ep-saved-item-trigger" data-action="toggle-report" data-year-month="2026-07">
+                      <span class="ep-saved-month-title">2026年7月月报</span>
+                      <span class="ep-saved-month-meta">保存于 2026-07-06 22:30</span>
+                      <span class="ep-saved-mini-stats">
+                        <span>标准 23 天</span>
+                        <span>已填 20 天</span>
+                        <span>实填 160h</span>
+                      </span>
+                    </button>
+                    <div class="ep-saved-actions">
+                      <button class="ep-btn ep-saved-view" data-action="toggle-report" data-year-month="2026-07">
+                        <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        <span>查看</span>
+                      </button>
+                      <button class="ep-btn ep-saved-single-download" data-action="download-single" data-year-month="2026-07">
+                        <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+                        <span>单月下载</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section id="ep-tool-quickcopy" class="ep-tool-section">
+            <div class="ep-section-head">
+              <div>
+                <h3>快速文案 <span>v1.0</span></h3>
+                <p>常用文本库</p>
+              </div>
+            </div>
+            <div class="ep-copy-shell">
+              <div class="ep-copy-toolbar">
+                <input id="ep-copy-search" class="ep-field" type="search" placeholder="搜索文案" value="">
+                <select id="ep-copy-filter" class="ep-field ep-copy-filter" title="分组">
+                  <option>全部分组</option>
+                </select>
+                <span id="ep-copy-count" class="ep-count">2/2</span>
+                <button id="ep-copy-new" class="ep-btn ep-btn-primary">
+                  <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+                  <span>新建</span>
+                </button>
+              </div>
+              <div id="ep-copy-editor" class="ep-copy-editor">
+                <div class="ep-copy-group-fields">
+                  <select id="ep-copy-group" class="ep-field" title="选择分组">
+                    <option>默认分组</option>
+                  </select>
+                  <input id="ep-copy-new-group" class="ep-field" type="text" placeholder="新建分组">
+                </div>
+                <textarea id="ep-copy-content" class="ep-field ep-textarea" placeholder="文案内容"></textarea>
+                <div class="ep-copy-editor-actions">
+                  <button id="ep-copy-save" class="ep-btn ep-btn-primary">
+                    <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><path d="M17 21v-8H7v8"></path><path d="M7 3v5h8"></path></svg>
+                    <span>保存文案</span>
+                  </button>
+                </div>
+              </div>
+              <div id="ep-copy-list" class="ep-copy-list">
+                <section class="ep-copy-group-block" data-group="默认分组">
+                  <div class="ep-copy-group-head">
+                    <button class="ep-copy-group-toggle" data-action="toggle-group" data-group="默认分组">
+                      <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>
+                      <span>默认分组</span>
+                      <em>2</em>
+                    </button>
+                  </div>
+                  <article class="ep-copy-item is-active" data-id="copy-1">
+                    <div class="ep-copy-main">
+                      <div class="ep-copy-preview">今日已完成相关功能调整，请确认。</div>
+                      <div class="ep-copy-row-meta">07-06</div>
+                    </div>
+                    <div class="ep-copy-item-tools">
+                      <button class="ep-icon-text-btn ep-copy-paste ep-copy-primary-action" title="快速填入"><svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"></path><path d="M22 2 11 13"></path></svg></button>
+                      <button class="ep-icon-text-btn ep-copy-copy" title="复制"><svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                    </div>
+                  </article>
+                </section>
+              </div>
+            </div>
+          </section>
+
+          <section id="ep-tool-taskcalc" class="ep-tool-section">
+            <div class="ep-section-head">
+              <div>
+                <h3>工时计算器 <span>v1.0</span></h3>
+                <p>自动读取设计任务，保存后计算填写进度</p>
+              </div>
+            </div>
+            <div class="ep-task-shell">
+              <div class="ep-task-toolbar">
+                <button id="ep-task-scan" class="ep-btn ep-btn-primary">
+                  <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.7-4"></path><path d="M5 3v5h5"></path><path d="M4 13a8 8 0 0 0 14.7 4"></path><path d="M19 21v-5h-5"></path></svg>
+                  <span>重新读取</span>
+                </button>
+                <span id="ep-task-scan-status" class="ep-task-status">读取到 2 条</span>
+              </div>
+              <div id="ep-task-discovered" class="ep-task-panel">
+                <div class="ep-task-panel-head">
+                  <div><strong>读取到的设计任务</strong><span>2 条</span></div>
+                  <button class="ep-btn ep-task-save-selected" data-action="save-selected">
+                    <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><path d="M17 21v-8H7v8"></path><path d="M7 3v5h8"></path></svg>
+                    <span>保存选中</span>
+                  </button>
+                </div>
+                <div class="ep-task-discovered-list">
+                  <label class="ep-task-discovered-item">
+                    <input type="checkbox" checked>
+                    <span class="ep-task-info"><span class="ep-task-name">项目表单交互优化</span><span class="ep-task-meta">设计师：未识别</span></span>
+                    <span class="ep-task-hours">12h</span>
+                    <span class="ep-task-tag is-saveable">可保存</span>
+                  </label>
+                </div>
+              </div>
+              <div id="ep-task-saved" class="ep-task-panel">
+                <div class="ep-task-panel-head"><div><strong>已保存任务</strong><span>1 条</span></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="ep-tool-budgetcalc" class="ep-tool-section">
+            <div class="ep-section-head">
+              <div>
+                <h3>预算计算器 <span>v1.0</span></h3>
+                <p>读取任务详情预算，保存后自动汇总</p>
+              </div>
+            </div>
+            <div class="ep-budget-shell">
+              <div id="ep-budget-month-log" class="ep-budget-log-panel">
+                <div class="ep-budget-log-fixed-head">
+                  <div>
+                    <strong>2026-07 常驻月日志</strong>
+                    <span class="is-missing">月 160h / 已记 128h / 未记 32h</span>
+                  </div>
+                  <div class="ep-budget-log-actions">
+                    <button class="ep-btn ep-budget-log-save" data-action="save-budget-month-log">
+                      <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><path d="M17 21v-8H7v8"></path><path d="M7 3v5h8"></path></svg>
+                      <span>保存常驻</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="ep-budget-calendar">
+                  <div class="ep-budget-weekdays"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+                  <div class="ep-budget-calendar-grid">
+                    <div class="ep-budget-cal-cell is-covered"><div class="ep-budget-cal-top"><strong>1</strong></div><div class="ep-budget-cal-hours"><span>8h</span></div></div>
+                    <div class="ep-budget-cal-cell is-covered"><div class="ep-budget-cal-top"><strong>2</strong></div><div class="ep-budget-cal-hours"><span>8h</span></div></div>
+                    <div class="ep-budget-cal-cell is-missing"><div class="ep-budget-cal-top"><strong>3</strong></div><div class="ep-budget-cal-hours"><span>0h</span></div></div>
+                  </div>
+                </div>
+              </div>
+              <div id="ep-budget-current" class="ep-budget-current">
+                <div class="ep-budget-current-compact">
+                  <div class="ep-budget-title-row">
+                    <strong>示例项目</strong>
+                    <span class="ep-budget-status is-unsaved">未保存</span>
+                  </div>
+                  <div class="ep-budget-task-row">移动端页面适配</div>
+                  <div class="ep-budget-action-row">
+                    <span class="ep-budget-amount-inline">预算 <strong>¥12,800.00</strong></span>
+                    <button class="ep-btn ep-btn-primary ep-budget-save-btn" data-action="save-budget-current">
+                      <svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><path d="M17 21v-8H7v8"></path><path d="M7 3v5h8"></path></svg>
+                      <span>保存</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div id="ep-budget-saved" class="ep-budget-panel">
+                <div class="ep-budget-panel-head">
+                  <div><strong>已保存预算</strong><span>2026-07 · 2 条</span></div>
+                  <div class="ep-budget-total">合计 ¥18,600.00</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <div id="ep-tool-toast" class="ep-tool-toast"></div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".ep-nav-item").forEach(button => {
+        button.addEventListener("click", () => {
+          const tool = button.getAttribute("data-tool");
+          document.querySelectorAll(".ep-nav-item").forEach(item => {
+            item.classList.toggle("is-active", item === button);
+          });
+          document.querySelectorAll(".ep-tool-section").forEach(section => {
+            section.classList.toggle("is-active", section.id === `ep-tool-${tool}`);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
