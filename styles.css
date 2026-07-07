@@ -1829,6 +1829,13 @@ code {
   padding: 24px;
 }
 
+.footer-info {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  min-width: 0;
+}
+
 .site-footer p {
   color: var(--muted);
   font-size: 14px;
@@ -1836,7 +1843,21 @@ code {
   text-align: center;
 }
 
-.site-footer a:last-child {
+.footer-author {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.footer-author a {
+  color: #475569;
+  font-weight: 800;
+}
+
+.footer-author a:hover {
+  color: var(--blue);
+}
+
+.footer-download {
   align-items: center;
   color: #334155;
   display: inline-flex;
@@ -1845,7 +1866,7 @@ code {
   gap: 8px;
 }
 
-.site-footer a:last-child:hover {
+.footer-download:hover {
   color: var(--blue);
 }
 
@@ -2127,6 +2148,10 @@ code {
 
   .site-footer {
     grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .footer-info {
     justify-items: start;
   }
 
