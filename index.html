@@ -13,7 +13,7 @@
     <meta property="og:description" content="Chrome 扩展浮动工具面板，覆盖日常记录、文案、计算与预算管理。">
     <meta property="og:image" content="assets/icon128.png">
     <link rel="icon" href="assets/icon48.png">
-    <link rel="stylesheet" href="styles.css?v=20260707-preview-left-edge">
+    <link rel="stylesheet" href="styles.css?v=20260707-comic-guide">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -23,6 +23,7 @@
       </a>
       <nav class="site-nav" aria-label="页面导航">
         <a href="#features">功能特性</a>
+        <a href="#comic">漫画教程</a>
         <a href="#manual">使用手册</a>
         <a href="#workflow">安装方法</a>
         <a href="#about">关于</a>
@@ -121,6 +122,141 @@
               <li>识别跨月任务并按当月工时分摊</li>
               <li>汇总已保存预算并提示异常值</li>
             </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="comic section-band" id="comic">
+        <div class="section-heading">
+          <h2>12 宫格漫画教程</h2>
+          <p>从下载安装到日常使用，用一组小漫画把插件流程讲清楚。</p>
+        </div>
+
+        <div class="comic-grid" aria-label="新点小工具 12 宫格使用漫画">
+          <article class="comic-panel">
+            <div class="comic-head"><span>01</span><strong>下载插件</strong></div>
+            <div class="comic-scene scene-download">
+              <div class="comic-browser">
+                <i></i><i></i><i></i>
+                <svg aria-hidden="true"><use href="#icon-download"></use></svg>
+              </div>
+              <div class="comic-bubble">先拿安装包</div>
+            </div>
+            <p>在官网点击「下载插件安装包」，得到 <em>新点小工具V1.0.zip</em>。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>02</span><strong>解压文件</strong></div>
+            <div class="comic-scene scene-folder">
+              <div class="comic-folder"><svg aria-hidden="true"><use href="#icon-folder"></use></svg></div>
+              <div class="comic-chip">manifest.json</div>
+              <div class="comic-bubble">不要直接选 zip</div>
+            </div>
+            <p>右键解压到固定文件夹，安装时选择包含 <em>manifest.json</em> 的目录。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>03</span><strong>打开扩展页</strong></div>
+            <div class="comic-scene scene-url">
+              <div class="comic-address">chrome://extensions/</div>
+              <div class="comic-address edge">edge://extensions/</div>
+              <div class="comic-bubble">Chrome / Edge 都可以</div>
+            </div>
+            <p>在 Chrome 或 Edge 地址栏进入扩展管理页面。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>04</span><strong>加载扩展</strong></div>
+            <div class="comic-scene scene-switch">
+              <div class="comic-toggle"><span></span></div>
+              <button type="button">加载已解压</button>
+              <div class="comic-bubble">打开开发者模式</div>
+            </div>
+            <p>开启「开发者模式」，点击「加载已解压的扩展程序」。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>05</span><strong>固定入口</strong></div>
+            <div class="comic-scene scene-pin">
+              <div class="comic-toolbar">
+                <span></span><span></span><span class="is-active">E</span>
+              </div>
+              <svg aria-hidden="true"><use href="#icon-pin"></use></svg>
+              <div class="comic-bubble">点扩展图标</div>
+            </div>
+            <p>安装完成后，在浏览器工具栏固定「新点小工具」。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>06</span><strong>呼出面板</strong></div>
+            <div class="comic-scene scene-panel">
+              <div class="comic-mini-panel">
+                <b>新点小工具</b>
+                <span>工时统计</span><span>快速文案</span><span>工时计算器</span><span>预算计算器</span>
+              </div>
+              <div class="comic-bubble">左侧切换工具</div>
+            </div>
+            <p>点击插件图标，浮动面板会出现在当前业务页面旁边。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>07</span><strong>工时统计</strong></div>
+            <div class="comic-scene scene-workhours">
+              <svg aria-hidden="true"><use href="#icon-clock"></use></svg>
+              <div class="comic-bars"><i></i><i></i><i></i></div>
+              <div class="comic-bubble">读取月历</div>
+            </div>
+            <p>进入日志月历页，查看标准工时、已填工时和未填工作日。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>08</span><strong>保存月报</strong></div>
+            <div class="comic-scene scene-save">
+              <svg aria-hidden="true"><use href="#icon-save"></use></svg>
+              <div class="comic-sheet"><i></i><i></i><i></i></div>
+              <div class="comic-bubble">可下载总表</div>
+            </div>
+            <p>确认数据后保存月报，后续可下载单月表或汇总表。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>09</span><strong>快速文案</strong></div>
+            <div class="comic-scene scene-copy">
+              <svg aria-hidden="true"><use href="#icon-file"></use></svg>
+              <div class="comic-message">常用回复</div>
+              <div class="comic-bubble">一键填入</div>
+            </div>
+            <p>把常用话术分组保存，搜索后复制或直接填入输入框。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>10</span><strong>工时计算</strong></div>
+            <div class="comic-scene scene-calc">
+              <svg aria-hidden="true"><use href="#icon-calculator"></use></svg>
+              <div class="comic-equation">8h ÷ 8 = 1d</div>
+              <div class="comic-bubble">任务进度更清楚</div>
+            </div>
+            <p>在任务页面读取预计工时，保存后跟踪小时、人天和完成比例。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>11</span><strong>预算核算</strong></div>
+            <div class="comic-scene scene-budget">
+              <svg aria-hidden="true"><use href="#icon-wallet"></use></svg>
+              <div class="comic-money">￥</div>
+              <div class="comic-bubble">跨月也能算</div>
+            </div>
+            <p>读取任务金额和日志明细，按月份沉淀预算记录并提示异常。</p>
+          </article>
+
+          <article class="comic-panel">
+            <div class="comic-head"><span>12</span><strong>回到官网</strong></div>
+            <div class="comic-scene scene-site">
+              <div class="comic-site-button">官网</div>
+              <svg aria-hidden="true"><use href="#icon-shield"></use></svg>
+              <div class="comic-bubble">数据留在本地</div>
+            </div>
+            <p>面板右上角可打开官网；月报、文案、任务和预算默认保存在本机浏览器。</p>
           </article>
         </div>
       </section>
