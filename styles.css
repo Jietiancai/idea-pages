@@ -2061,6 +2061,7 @@ code {
 
   .plugin-preview-frame {
     height: 680px;
+    transform: translateX(-190px);
     width: 980px;
   }
 
