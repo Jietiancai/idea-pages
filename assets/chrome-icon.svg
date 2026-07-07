@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Google Chrome">
+  <circle cx="32" cy="32" r="30" fill="#fff"/>
+  <path fill="#ea4335" d="M32 2a30 30 0 0 1 26 15H32a15 15 0 0 0-13 7.5L10.3 9.5A29.9 29.9 0 0 1 32 2Z"/>
+  <path fill="#fbbc05" d="M58 17A30 30 0 0 1 32 62l13-22.5A15 15 0 0 0 32 17h26Z"/>
+  <path fill="#34a853" d="M32 62A30 30 0 0 1 10.3 9.5L23 32a15 15 0 0 0 22 7.5L32 62Z"/>
+  <circle cx="32" cy="32" r="15" fill="#4285f4" stroke="#fff" stroke-width="4"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+</svg>
