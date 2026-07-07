@@ -1242,6 +1242,7 @@ main {
 }
 
 .features,
+.comic,
 .manual,
 .workflow,
 .share,
@@ -1253,6 +1254,7 @@ main {
 }
 
 .manual,
+.comic,
 .workflow,
 .about {
   max-width: none;
@@ -1261,6 +1263,7 @@ main {
 }
 
 .manual > *,
+.comic > *,
 .workflow > *,
 .about > * {
   position: relative;
@@ -1294,6 +1297,388 @@ main {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.comic-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: var(--content);
+}
+
+.comic-panel {
+  background: #ffffff;
+  border: 1px solid #d9e1ec;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 12px;
+  min-height: 330px;
+  padding: 14px;
+}
+
+.comic-head {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.comic-head span {
+  align-items: center;
+  background: #111827;
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 900;
+  height: 30px;
+  justify-content: center;
+  width: 30px;
+}
+
+.comic-head strong {
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.comic-scene {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.2)),
+    #eef6ff;
+  border: 2px solid #111827;
+  border-radius: 8px;
+  min-height: 142px;
+  overflow: hidden;
+  position: relative;
+}
+
+.comic-scene::after {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+  content: "";
+  inset: 0;
+  opacity: 0.28;
+  pointer-events: none;
+  position: absolute;
+}
+
+.comic-bubble {
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 rgba(17, 24, 39, 0.14);
+  color: #111827;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.2;
+  max-width: 150px;
+  padding: 8px 11px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 2;
+}
+
+.comic-panel p {
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.68;
+  margin: 0;
+}
+
+.comic-panel em {
+  color: var(--blue);
+  font-style: normal;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.comic-scene svg {
+  color: var(--blue);
+  height: 46px;
+  width: 46px;
+}
+
+.comic-browser,
+.comic-folder,
+.comic-address,
+.comic-toggle,
+.comic-toolbar,
+.comic-mini-panel,
+.comic-sheet,
+.comic-message,
+.comic-equation,
+.comic-money,
+.comic-site-button {
+  position: absolute;
+  z-index: 1;
+}
+
+.comic-browser {
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 8px;
+  bottom: 22px;
+  box-shadow: 5px 5px 0 rgba(17, 24, 39, 0.12);
+  display: grid;
+  gap: 10px;
+  left: 18px;
+  padding: 16px;
+  width: 142px;
+}
+
+.comic-browser i {
+  background: #dbeafe;
+  border-radius: 999px;
+  display: block;
+  height: 8px;
+}
+
+.comic-browser svg {
+  bottom: 13px;
+  position: absolute;
+  right: 12px;
+}
+
+.comic-folder {
+  align-items: center;
+  background: #fff7ed;
+  border: 2px solid #111827;
+  border-radius: 8px;
+  bottom: 24px;
+  color: #ea580c;
+  display: inline-flex;
+  height: 82px;
+  justify-content: center;
+  left: 20px;
+  width: 102px;
+}
+
+.comic-chip {
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  bottom: 24px;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 900;
+  left: 104px;
+  padding: 7px 10px;
+  position: absolute;
+  z-index: 2;
+}
+
+.comic-address {
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  bottom: 58px;
+  color: #1d4ed8;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+  font-weight: 800;
+  left: 18px;
+  padding: 9px 12px;
+}
+
+.comic-address.edge {
+  bottom: 22px;
+  color: #0f766e;
+}
+
+.comic-toggle {
+  background: var(--blue);
+  border: 2px solid #111827;
+  border-radius: 999px;
+  bottom: 72px;
+  height: 34px;
+  left: 22px;
+  width: 70px;
+}
+
+.comic-toggle span {
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  height: 26px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 26px;
+}
+
+.scene-switch button {
+  background: #111827;
+  border: 0;
+  border-radius: 7px;
+  bottom: 28px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  left: 22px;
+  padding: 9px 13px;
+  position: absolute;
+  z-index: 1;
+}
+
+.comic-toolbar {
+  align-items: center;
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  bottom: 34px;
+  display: flex;
+  gap: 8px;
+  left: 18px;
+  padding: 9px 12px;
+}
+
+.comic-toolbar span {
+  align-items: center;
+  background: #e2e8f0;
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-weight: 900;
+  height: 26px;
+  justify-content: center;
+  width: 26px;
+}
+
+.comic-toolbar .is-active {
+  background: var(--blue);
+}
+
+.scene-pin > svg {
+  color: #f97316;
+  left: 118px;
+  position: absolute;
+  top: 52px;
+  z-index: 1;
+}
+
+.comic-mini-panel {
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 8px;
+  bottom: 16px;
+  box-shadow: 5px 5px 0 rgba(37, 99, 235, 0.18);
+  display: grid;
+  gap: 6px;
+  left: 18px;
+  padding: 12px;
+  width: 132px;
+}
+
+.comic-mini-panel b {
+  color: #111827;
+  font-size: 13px;
+}
+
+.comic-mini-panel span {
+  background: #eff6ff;
+  border-radius: 5px;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 7px;
+}
+
+.scene-workhours svg,
+.scene-save svg,
+.scene-copy svg,
+.scene-calc svg,
+.scene-budget svg,
+.scene-site svg {
+  left: 22px;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+}
+
+.comic-bars,
+.comic-sheet {
+  bottom: 22px;
+  display: grid;
+  gap: 8px;
+  left: 24px;
+  width: 118px;
+}
+
+.comic-bars i,
+.comic-sheet i {
+  background: #bfdbfe;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  display: block;
+  height: 13px;
+}
+
+.comic-bars i:nth-child(2),
+.comic-sheet i:nth-child(2) {
+  width: 78%;
+}
+
+.comic-bars i:nth-child(3),
+.comic-sheet i:nth-child(3) {
+  background: #bbf7d0;
+  width: 58%;
+}
+
+.comic-message {
+  background: #ffffff;
+  border: 2px solid #111827;
+  border-radius: 8px;
+  bottom: 24px;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 900;
+  left: 24px;
+  padding: 12px 14px;
+}
+
+.comic-equation {
+  background: #111827;
+  border-radius: 8px;
+  bottom: 30px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 900;
+  left: 22px;
+  padding: 11px 13px;
+}
+
+.comic-money {
+  align-items: center;
+  background: #dcfce7;
+  border: 2px solid #111827;
+  border-radius: 999px;
+  bottom: 26px;
+  color: #15803d;
+  display: inline-flex;
+  font-size: 34px;
+  font-weight: 900;
+  height: 76px;
+  justify-content: center;
+  left: 32px;
+  width: 76px;
+}
+
+.comic-site-button {
+  background: var(--blue);
+  border: 2px solid #111827;
+  border-radius: 7px;
+  bottom: 32px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 900;
+  left: 22px;
+  padding: 10px 18px;
 }
 
 .manual-layout {
@@ -1945,6 +2330,10 @@ code {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .comic-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .flow {
     gap: 18px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2012,7 +2401,7 @@ code {
   .header-actions {
     gap: 10px;
     grid-template-columns: 1fr;
-    padding: 230px 18px 18px;
+    padding: 282px 18px 18px;
   }
 
   .header-actions .ghost-link {
@@ -2102,6 +2491,7 @@ code {
   }
 
   .features,
+  .comic,
   .manual,
   .workflow,
   .share,
@@ -2115,6 +2505,7 @@ code {
   }
 
   .feature-grid,
+  .comic-grid,
   .install-grid,
   .install-tips,
   .flow,
@@ -2136,6 +2527,10 @@ code {
 
   .feature-card {
     min-height: 0;
+  }
+
+  .comic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .flow-step {
@@ -2180,6 +2575,14 @@ code {
   .about-facts span + span {
     border-left: 0;
     border-top: 1px solid var(--border-soft);
+  }
+
+  .comic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comic-panel {
+    min-height: 300px;
   }
 
   .manual-card header {
