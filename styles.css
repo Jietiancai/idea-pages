@@ -1440,24 +1440,28 @@ main {
   border-bottom: 1px solid var(--border-soft);
   display: grid;
   gap: 16px;
-  grid-template-columns: 82px minmax(0, 1fr);
+  grid-template-columns: 58px minmax(0, 1fr);
   margin-bottom: 18px;
   padding-bottom: 18px;
 }
 
-.install-badge {
+.browser-logo {
   align-items: center;
-  background: var(--blue-soft);
-  border: 1px solid #c7ddfb;
-  border-radius: 8px;
-  color: var(--blue);
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
   display: inline-flex;
-  font-size: 13px;
-  font-weight: 900;
-  height: 38px;
+  height: 58px;
   justify-content: center;
-  line-height: 1;
-  width: 82px;
+  padding: 7px;
+  width: 58px;
+}
+
+.browser-logo img {
+  display: block;
+  height: 44px;
+  width: 44px;
 }
 
 .install-card h3 {

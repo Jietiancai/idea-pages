@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Microsoft Edge">
+  <defs>
+    <linearGradient id="edge-blue" x1="12" y1="8" x2="54" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0ac4ff"/>
+      <stop offset="0.52" stop-color="#1273de"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="edge-green" x1="10" y1="48" x2="56" y2="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="0.55" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <radialGradient id="edge-light" cx="22" cy="20" r="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="0.38" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#fff"/>
+  <path fill="url(#edge-blue)" d="M59.5 34.2c0-17.4-11.8-30.2-27.3-30.2C16.6 4 5.6 15 4.3 30.3c4.9-8.1 13.8-13.4 23.9-13.4 12.7 0 23.3 7.6 27.7 18.4 1.6.1 2.7-.3 3.6-1.1Z"/>
+  <path fill="url(#edge-green)" d="M58.5 38.1C55.8 50.7 44.8 60 31.8 60 17 60 5 48.6 4.2 34.1c3.4 9.5 12.9 16.3 24 16.3 7.8 0 14.7-3.3 18.9-8.5-3.6 1.7-7.8 2.1-11.8 1.2-6.4-1.5-10.8-5.7-10.8-10.1 0-5.2 5.4-9.4 12-9.4 9.5 0 17.2 6.1 20 14.3.8.2 1.4.2 2 .2Z"/>
+  <path fill="url(#edge-light)" d="M4.4 31.9C6.3 19.3 16.9 9.7 29.8 9.7c12.2 0 22.7 8.7 26.2 20.9-4.9-7.1-13.7-11.8-24-11.8-12.9 0-23.7 7.2-27.6 13.1Z"/>
+  <path fill="#0f9fda" d="M22.9 33.7c0 8.7 8 14.8 18.1 14.8 6.8 0 12.6-2.6 16-7-3.4 10-13 17-25.2 17-14.1 0-25.5-10.8-26-24.5 3.3-8.5 12-15.1 22.6-15.1 10.4 0 19.2 6.7 21 15.4-2.7-5.2-7.9-8.6-14.1-8.6-7 0-12.4 3.4-12.4 8Z"/>
+  <path fill="#ffffff" d="M24.7 34.4c1.2 5.4 7.3 9 15.4 9 5.9 0 11.6-1.8 16-5.3-1.1 2.4-3.1 4.6-5.8 6.4-3.2 2.1-7.3 3.2-11.7 3.2-9.8 0-17.4-5.3-17.4-12.4 0-1.4.3-2.7.9-3.8.3 1.1 1.2 2.1 2.6 2.9Z" opacity=".22"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+</svg>
