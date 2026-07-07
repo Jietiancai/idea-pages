@@ -13,7 +13,7 @@
     <meta property="og:description" content="Chrome 扩展浮动工具面板，覆盖日常记录、文案、计算与预算管理。">
     <meta property="og:image" content="assets/icon128.png">
     <link rel="icon" href="assets/icon48.png">
-    <link rel="stylesheet" href="styles.css?v=20260707-left-crop">
+    <link rel="stylesheet" href="styles.css?v=20260707-manual">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -23,6 +23,7 @@
       </a>
       <nav class="site-nav" aria-label="页面导航">
         <a href="#features">功能特性</a>
+        <a href="#manual">使用手册</a>
         <a href="#workflow">使用流程</a>
         <a href="#about">关于</a>
       </nav>
@@ -121,6 +122,140 @@
               <li>汇总已保存预算并提示异常值</li>
             </ul>
           </article>
+        </div>
+      </section>
+
+      <section class="manual section-band" id="manual">
+        <div class="section-heading">
+          <h2>插件使用手册</h2>
+          <p>按工具面板左侧四个功能整理，进入对应业务页面后打开面板即可使用。</p>
+        </div>
+
+        <div class="manual-layout">
+          <article class="manual-card">
+            <header>
+              <span class="manual-icon"><svg aria-hidden="true"><use href="#icon-clock"></use></svg></span>
+              <div>
+                <h3>工时统计</h3>
+                <p>用于从日志月历页读取当月填报情况，并沉淀月报记录。</p>
+              </div>
+            </header>
+            <div class="manual-body">
+              <div class="manual-block">
+                <strong>使用步骤</strong>
+                <ol>
+                  <li>进入新点 OA 的日志月历页，确认页面已经显示目标月份。</li>
+                  <li>打开插件面板，切换到「工时统计」。</li>
+                  <li>查看标准工作天数、实际填工时天数、标准工时、实际工时和工时差额。</li>
+                  <li>确认数据无误后点击「保存月报」。</li>
+                  <li>在「已保存月报」中查看历史月份，按需下载单月或下载总表。</li>
+                </ol>
+              </div>
+              <div class="manual-block manual-note">
+                <strong>注意事项</strong>
+                <ul>
+                  <li>未进入日志月历页时，插件会提示进入对应页面后再读取。</li>
+                  <li>月报会保存到当前浏览器本地存储，更换浏览器或清理数据后需重新保存。</li>
+                  <li>遇到请假、补班、法定休等日期，请以统计卡片中的分类结果为准再核对。</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="manual-card">
+            <header>
+              <span class="manual-icon"><svg aria-hidden="true"><use href="#icon-file"></use></svg></span>
+              <div>
+                <h3>快速文案</h3>
+                <p>用于管理常用回复、日报片段、确认话术，并快速复制或填入输入框。</p>
+              </div>
+            </header>
+            <div class="manual-body">
+              <div class="manual-block">
+                <strong>使用步骤</strong>
+                <ol>
+                  <li>切换到「快速文案」，点击「新建」。</li>
+                  <li>选择已有分组，或在「新建分组」中输入新的分组名称。</li>
+                  <li>填写文案内容后点击「保存文案」。</li>
+                  <li>通过搜索框或分组筛选定位文案。</li>
+                  <li>点击发送图标快速填入当前编辑区域，或点击复制图标复制到剪贴板。</li>
+                </ol>
+              </div>
+              <div class="manual-block manual-note">
+                <strong>管理方式</strong>
+                <ul>
+                  <li>分组支持折叠、改名和删除，默认分组不可直接删除。</li>
+                  <li>单条文案支持编辑和删除。</li>
+                  <li>当前页面找不到可填入输入框时，插件会退回为复制文本。</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="manual-card">
+            <header>
+              <span class="manual-icon"><svg aria-hidden="true"><use href="#icon-calculator"></use></svg></span>
+              <div>
+                <h3>工时计算器</h3>
+                <p>用于读取设计任务预计工时，保存后跟踪已填工时和完成比例。</p>
+              </div>
+            </header>
+            <div class="manual-body">
+              <div class="manual-block">
+                <strong>使用步骤</strong>
+                <ol>
+                  <li>进入包含设计任务列表或任务信息的页面。</li>
+                  <li>切换到「工时计算器」，点击「重新读取」。</li>
+                  <li>在「读取到的设计任务」中勾选需要跟踪的任务。</li>
+                  <li>点击「保存选中」，任务会进入「已保存任务」。</li>
+                  <li>在已保存任务中填写「已填」工时，查看进度条和完成百分比。</li>
+                </ol>
+              </div>
+              <div class="manual-block manual-note">
+                <strong>核对规则</strong>
+                <ul>
+                  <li>已保存过的任务会显示为「已保存」，避免重复保存。</li>
+                  <li>已填工时超过预计工时时，百分比会继续显示，便于发现超工时。</li>
+                  <li>读取不到任务时，先确认当前页面是否包含任务名称、设计师和预计工时。</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="manual-card">
+            <header>
+              <span class="manual-icon"><svg aria-hidden="true"><use href="#icon-wallet"></use></svg></span>
+              <div>
+                <h3>预算计算器</h3>
+                <p>用于读取任务预算和日志明细，按月份保存预算并汇总金额。</p>
+              </div>
+            </header>
+            <div class="manual-body">
+              <div class="manual-block">
+                <strong>使用步骤</strong>
+                <ol>
+                  <li>先打开整月日志页，让插件读取当月日志，并在「常驻月日志」中点击「保存常驻」。</li>
+                  <li>进入任务详情页，切换到「预算计算器」。</li>
+                  <li>确认项目名称、任务名称和预算金额已经读取出来。</li>
+                  <li>点击当前任务卡片中的「保存」。</li>
+                  <li>在「已保存预算」中查看当月预算列表和合计金额。</li>
+                </ol>
+              </div>
+              <div class="manual-block manual-note">
+                <strong>特殊情况</strong>
+                <ul>
+                  <li>预算为 0 时会弹出确认，建议先核对任务预算信息是否遗漏。</li>
+                  <li>跨月任务会按当月工时占总工时的比例分摊预算，保存前会显示确认信息。</li>
+                  <li>常驻月日志可按年月切换，也可以删除不再需要的月份记录。</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="manual-footer-note">
+          <svg aria-hidden="true"><use href="#icon-shield"></use></svg>
+          <p>所有月报、文案、任务和预算记录默认保存到当前 Chrome 浏览器本地存储中；公开网页仅提供说明与下载，不会上传你的业务数据。</p>
         </div>
       </section>
 
