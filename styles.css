@@ -332,14 +332,16 @@ main {
   display: flex;
   justify-content: center;
   min-height: 680px;
+  overflow: hidden;
   position: relative;
 }
 
 .plugin-preview-frame {
   border: 0;
   display: block;
+  flex: 0 0 980px;
   height: 680px;
-  max-width: 100%;
+  max-width: none;
   position: relative;
   width: 980px;
   z-index: 2;
@@ -1818,8 +1820,8 @@ code {
   }
 
   .plugin-preview-frame {
-    height: 520px;
-    width: 100%;
+    height: 680px;
+    width: 980px;
   }
 
   .browser-shell {
