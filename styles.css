@@ -1816,6 +1816,7 @@ code {
   }
 
   .hero-visual {
+    justify-content: flex-start;
     min-height: 0;
   }
 
