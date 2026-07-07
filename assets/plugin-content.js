@@ -28,6 +28,7 @@
   const BUDGET_LOG_REPORT_STORAGE_KEY = 'epoint_budget_log_report';
   const BUDGET_LOG_ACTIVE_MONTH_STORAGE_KEY = 'epoint_budget_log_active_month';
   const ACTIVE_TOOL_STORAGE_KEY = 'epoint_active_tool';
+  const OFFICIAL_SITE_URL = 'https://jietiancai.github.io/idea-pages/';
   const PANEL_OPEN_STORAGE_KEY = 'epoint_panel_open';
   const PANEL_HEIGHT_STORAGE_KEY = 'epoint_panel_height';
   const PANEL_MIN_HEIGHT = 360;
@@ -288,6 +289,7 @@
       eye: '<svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>',
       chevronUp: '<svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>',
       chevronDown: '<svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>',
+      globe: '<svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a13.8 13.8 0 0 1 0 18"></path><path d="M12 3a13.8 13.8 0 0 0 0 18"></path></svg>',
       minus: '<svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>',
       send: '<svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"></path><path d="M22 2 11 13"></path></svg>',
       copy: '<svg class="ep-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>',
@@ -732,6 +734,10 @@
 
   // ============ 面板 ============
 
+  function openOfficialSite() {
+    window.open(OFFICIAL_SITE_URL, '_blank', 'noopener,noreferrer');
+  }
+
   function createPanel() {
     document.getElementById('ep-stats-panel')?.remove();
     document.getElementById('ep-tool-panel')?.remove();
@@ -754,6 +760,7 @@
           </div>
         </div>
         <div class="ep-header-actions">
+          <button id="ep-btn-site" class="ep-site-btn" type="button" title="打开插件官网" aria-label="打开插件官网">${iconSvg('globe')}<span>官网</span></button>
           <button id="ep-btn-hide" class="ep-icon-btn" title="隐藏面板" aria-label="隐藏面板">${iconSvg('minus')}</button>
         </div>
       </div>
@@ -882,6 +889,7 @@
       btn.addEventListener('click', () => switchTool(btn.getAttribute('data-tool')));
     });
 
+    document.getElementById('ep-btn-site')?.addEventListener('click', openOfficialSite);
     document.getElementById('ep-btn-hide')?.addEventListener('click', () => setPanelOpen(false));
     document.getElementById('ep-tool-launcher')?.addEventListener('click', () => setPanelOpen(true));
     bindPanelResize();
