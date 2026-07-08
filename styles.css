@@ -1242,6 +1242,7 @@ main {
 }
 
 .features,
+.comic,
 .manual,
 .workflow,
 .share,
@@ -1253,6 +1254,7 @@ main {
 }
 
 .manual,
+.comic,
 .workflow,
 .about {
   max-width: none;
@@ -1261,6 +1263,7 @@ main {
 }
 
 .manual > *,
+.comic > *,
 .workflow > *,
 .about > * {
   position: relative;
@@ -1294,6 +1297,35 @@ main {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.comic-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 0 auto;
+  max-width: var(--content);
+  padding: 0;
+}
+
+.comic-card {
+  aspect-ratio: 1;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow:
+    0 18px 34px rgba(37, 99, 235, 0.08),
+    0 4px 12px rgba(15, 23, 42, 0.04);
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.comic-card img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .manual-layout {
@@ -1945,6 +1977,10 @@ code {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .comic-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .flow {
     gap: 18px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2102,6 +2138,7 @@ code {
   }
 
   .features,
+  .comic,
   .manual,
   .workflow,
   .share,
@@ -2120,6 +2157,11 @@ code {
   .flow,
   .share-layout {
     grid-template-columns: 1fr;
+  }
+
+  .comic-grid {
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .install-card {
@@ -2171,6 +2213,14 @@ code {
 
   .mock-tabs button {
     border-bottom: 1px solid var(--border-soft);
+  }
+
+  .comic-grid {
+    gap: 9px;
+  }
+
+  .comic-card {
+    border-radius: 10px;
   }
 
   .about-facts {
