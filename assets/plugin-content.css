@@ -64,11 +64,21 @@
   align-items: center;
   background: #ffffff;
   border-bottom: 1px solid #e5eaf2;
+  cursor: move;
   display: flex;
   flex: 0 0 58px;
   justify-content: space-between;
   height: 58px;
   padding: 12px 14px;
+  user-select: none;
+}
+
+#ep-tool-panel.is-dragging {
+  user-select: none;
+}
+
+#ep-tool-panel.is-dragging .ep-tool-header {
+  cursor: grabbing;
 }
 
 .ep-brand {
