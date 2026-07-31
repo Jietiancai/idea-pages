@@ -1461,6 +1461,12 @@
   grid-template-rows: auto minmax(0, 1fr);
 }
 
+.ep-budget-log-panel {
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+}
+
 .ep-budget-current-head,
 .ep-budget-panel-head {
   align-items: center;
@@ -1775,7 +1781,10 @@
   max-height: 61px;
   min-height: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding-right: 2px;
+  scroll-behavior: auto;
+  scrollbar-gutter: stable;
 }
 
 .ep-budget-weekdays span {
@@ -1929,6 +1938,63 @@
   flex: 0 0 auto;
   height: 27px;
   padding: 0 8px;
+}
+
+.ep-budget-log-save-wrap {
+  display: inline-flex;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.ep-budget-log-save-tip {
+  background: #ffffff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  bottom: calc(100% + 7px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);
+  color: #1e3a8a;
+  display: grid;
+  gap: 2px;
+  line-height: 1.25;
+  max-width: 190px;
+  min-width: 148px;
+  padding: 7px 9px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  white-space: normal;
+  z-index: 5;
+}
+
+.ep-budget-log-save-tip::after {
+  background: #ffffff;
+  border-bottom: 1px solid #bfdbfe;
+  border-right: 1px solid #bfdbfe;
+  bottom: -5px;
+  content: "";
+  height: 8px;
+  position: absolute;
+  right: 18px;
+  transform: rotate(45deg);
+  width: 8px;
+}
+
+.ep-budget-log-save-tip strong {
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 900;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.ep-budget-log-save-tip span {
+  color: #475569;
+  font-size: 10px;
+  font-weight: 800;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
 }
 
 .ep-budget-log-delete {
