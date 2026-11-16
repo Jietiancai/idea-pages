@@ -251,11 +251,11 @@ main {
 .hero {
   display: grid;
   gap: 44px;
-  grid-template-columns: minmax(340px, 0.72fr) minmax(980px, 1fr);
+  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
   margin: 0 auto;
   max-width: 1440px;
-  min-height: 760px;
-  padding: 64px 24px 74px;
+  min-height: 640px;
+  padding: 48px 24px 44px;
 }
 
 .hero > * {
@@ -328,22 +328,26 @@ main {
 }
 
 .hero-visual {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  min-height: 680px;
+  align-self: center;
+  aspect-ratio: 800 / 620;
+  margin: 0 auto;
+  max-width: 800px;
+  min-width: 0;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .plugin-preview-frame {
   border: 0;
   display: block;
-  flex: 0 0 980px;
-  height: 680px;
+  height: 620px;
   max-width: none;
-  position: relative;
-  width: 980px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: top left;
+  width: 800px;
   z-index: 2;
 }
 
@@ -1958,7 +1962,8 @@ code {
   }
 
   .hero-visual {
-    min-height: 500px;
+    min-height: 0;
+    max-width: 640px;
   }
 
   .browser-shell {
@@ -2048,7 +2053,8 @@ code {
   .header-actions {
     gap: 10px;
     grid-template-columns: 1fr;
-    padding: 282px 18px 18px;
+    padding: 12px 18px 18px;
+    top: 286px;
   }
 
   .header-actions .ghost-link {
@@ -2056,8 +2062,8 @@ code {
   }
 
   .hero {
-    gap: 36px;
-    padding: 46px 18px 54px;
+    gap: 20px;
+    padding: 24px 18px;
   }
 
   .hero h1 {
@@ -2083,7 +2089,10 @@ code {
 
   .trust-row {
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
+    font-size: 12px;
+    gap: 8px 12px;
+    margin-top: 18px;
   }
 
   .trust-row span + span::before {
@@ -2091,14 +2100,12 @@ code {
   }
 
   .hero-visual {
-    justify-content: flex-start;
     min-height: 0;
   }
 
   .plugin-preview-frame {
-    height: 680px;
-    transform: translateX(-190px);
-    width: 980px;
+    height: 620px;
+    width: 800px;
   }
 
   .browser-shell {
@@ -2149,6 +2156,10 @@ code {
   .section-heading h2,
   .about h2 {
     font-size: 28px;
+  }
+
+  .features {
+    padding-top: 32px;
   }
 
   .feature-grid,

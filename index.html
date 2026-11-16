@@ -6,14 +6,14 @@
     <title>新点小工具 V1.01 | Chrome 扩展工具面板</title>
     <meta
       name="description"
-      content="新点小工具 V1.01 是面向新点 OA 与项目管理场景的 Chrome 扩展，包含工时统计、快速文案、工时计算器和预算计算器。"
+      content="新点小工具 V1.01 适用于 Chrome 和 Edge，包含工时统计、预算统计、快速文案和工时计算器，支持窗口缩放、区域折叠与本地保存。"
     >
     <meta name="theme-color" content="#2563eb">
     <meta property="og:title" content="新点小工具 V1.01">
     <meta property="og:description" content="Chrome 扩展浮动工具面板，覆盖日常记录、文案、计算与预算管理。">
     <meta property="og:image" content="assets/icon128.png">
     <link rel="icon" href="assets/icon48.png">
-    <link rel="stylesheet" href="styles.css?v=20260708-comic-guide">
+    <link rel="stylesheet" href="styles.css?v=20261116-current">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -21,20 +21,20 @@
         <img src="assets/icon48.png" alt="" width="32" height="32">
         <span>新点小工具</span>
       </a>
-      <nav class="site-nav" aria-label="页面导航">
+      <nav class="site-nav" id="site-navigation" aria-label="页面导航">
         <a href="#features">功能特性</a>
-        <a href="#comic">漫画教程</a>
+        <a href="#comic">图解教程</a>
         <a href="#manual">使用手册</a>
         <a href="#workflow">安装方法</a>
         <a href="#about">关于</a>
       </nav>
       <div class="header-actions">
-        <a class="primary-link" href="downloads/新点小工具V1.01.zip?v=20260731-v101" download="新点小工具V1.01.zip">
+        <a class="primary-link" href="downloads/新点小工具V1.01.zip?v=20261116-current" download="新点小工具V1.01.zip">
           <svg aria-hidden="true"><use href="#icon-download"></use></svg>
           <span>下载插件</span>
         </a>
       </div>
-      <button class="menu-button" type="button" data-menu-button aria-label="打开导航">
+      <button class="menu-button" type="button" data-menu-button aria-label="打开导航" aria-expanded="false" aria-controls="site-navigation">
         <svg aria-hidden="true"><use href="#icon-menu"></use></svg>
       </button>
     </header>
@@ -43,12 +43,12 @@
       <section class="hero section-band">
         <div class="hero-copy">
           <h1>新点小工具 V1.01</h1>
-          <p class="hero-subtitle">Chrome 扩展，浮动工具面板。</p>
+          <p class="hero-subtitle">Chrome / Edge 浮动工具面板</p>
           <p class="hero-text">
-            面向新点 OA 与项目管理的轻量工具集，把工时统计、常用文案、任务工时与预算汇总放在当前页面旁边。
+            面向新点 OA 与项目管理，将工时、预算、常用文案与任务进度集中在当前页面。
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="downloads/新点小工具V1.01.zip?v=20260731-v101" download="新点小工具V1.01.zip">
+            <a class="button button-primary" href="downloads/新点小工具V1.01.zip?v=20261116-current" download="新点小工具V1.01.zip">
               <svg aria-hidden="true"><use href="#icon-download"></use></svg>
               <span>下载插件安装包</span>
             </a>
@@ -60,18 +60,19 @@
           <div class="trust-row" aria-label="产品特点">
             <span>
               <svg aria-hidden="true"><use href="#icon-shield"></use></svg>
-              纯前端静态页面
+              数据本地保存
             </span>
-            <span>原插件样式预览</span>
-            <span>内置安装包下载</span>
+            <span>四大工具 v1.02</span>
+            <span>可拖动与缩放</span>
           </div>
         </div>
 
         <div class="hero-visual" aria-label="实际插件工具面板预览">
           <iframe
             class="plugin-preview-frame"
-            src="plugin-preview.html?v=20260731-v101"
+            src="plugin-preview.html?v=20261116-current"
             title="新点小工具实际插件界面预览"
+            allow="clipboard-write"
             loading="eager"
           ></iframe>
         </div>
@@ -94,6 +95,16 @@
             </ul>
           </article>
           <article class="feature-card">
+            <span class="feature-icon"><svg aria-hidden="true"><use href="#icon-wallet"></use></svg></span>
+            <h3>预算统计</h3>
+            <p>读取任务详情中的项目、任务、总额与日志明细，按月份沉淀预算记录。</p>
+            <ul>
+              <li>常驻保存整月日志</li>
+              <li>识别跨月任务并按当月工时分摊</li>
+              <li>完整月历、工时核对与区域折叠</li>
+            </ul>
+          </article>
+          <article class="feature-card">
             <span class="feature-icon"><svg aria-hidden="true"><use href="#icon-file"></use></svg></span>
             <h3>快速文案</h3>
             <p>沉淀常用文本和回复模板，支持搜索、分组、一键复制与填入当前编辑区域。</p>
@@ -113,61 +124,51 @@
               <li>按小时、人天规则汇总结果</li>
             </ul>
           </article>
-          <article class="feature-card">
-            <span class="feature-icon"><svg aria-hidden="true"><use href="#icon-wallet"></use></svg></span>
-            <h3>预算计算器</h3>
-            <p>读取任务详情中的项目、任务、总额与日志明细，按月份沉淀预算记录。</p>
-            <ul>
-              <li>常驻保存整月日志</li>
-              <li>识别跨月任务并按当月工时分摊</li>
-              <li>汇总已保存预算并提示异常值</li>
-            </ul>
-          </article>
         </div>
       </section>
 
       <section class="comic section-band" id="comic">
         <div class="section-heading">
-          <h2>漫画教程</h2>
-          <p>从安装到常用功能，一张 12 格漫画快速看懂新点小工具的完整使用流程。</p>
+          <h2>图解教程</h2>
+          <p>从安装到常用功能，12 格图解对应当前插件的使用流程。</p>
         </div>
 
-        <ol class="comic-grid" aria-label="新点小工具 12 格漫画教程">
+        <ol class="comic-grid" aria-label="新点小工具 12 格图解教程">
           <li class="comic-card">
-            <img src="assets/comic-guide-01.png" alt="01 下载插件：官网点击下载，拿到新点小工具 V1.01.zip。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-01.png?v=20261116-current" alt="01 下载插件：官网点击下载，拿到新点小工具 V1.01.zip。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-02.png" alt="02 解压文件：先解压，保留含 manifest.json 的文件夹。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-02.png?v=20261116-current" alt="02 解压文件：先解压，保留含 manifest.json 的文件夹。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-03.png" alt="03 打开扩展页：Chrome 或 Edge 进入扩展管理页面。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-03.png?v=20261116-current" alt="03 打开扩展页：Chrome 或 Edge 进入扩展管理页面。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-04.png" alt="04 加载扩展：打开开发者模式，加载已解压的扩展。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-04.png?v=20261116-current" alt="04 加载扩展：打开开发者模式，加载已解压的扩展。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-05.png" alt="05 固定入口：把新点小工具固定到浏览器工具栏。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-05.png?v=20261116-current" alt="05 固定入口：把新点小工具固定到浏览器工具栏。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-06.png" alt="06 呼出面板：点击插件图标，浮动画板出现在页面旁。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-06.png?v=20261116-current" alt="06 呼出面板：点击插件图标，浮动面板出现在页面旁。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-07.png" alt="07 工时统计：查看标准工作天数、实际填工时和差额。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-07.png?v=20261116-current" alt="07 工时统计：查看标准工作天数、实际填工时和差额。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-08.png" alt="08 保存月报：保存月报后，可查看历史并下载表格。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-08.png?v=20261116-current" alt="08 保存月报：保存月报后，可查看历史并下载表格。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-09.png" alt="09 快速文案：管理常用文案，搜索后复制或一键填入。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-09.png?v=20261116-current" alt="09 快速文案：管理常用文案，搜索后复制或一键填入。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-10.png" alt="10 工时计算器：读取设计任务，保存后计算填写进度。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-10.png?v=20261116-current" alt="10 工时计算器：读取设计任务，保存后计算填写进度。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-11.png" alt="11 预算计算器：读取任务预算和常驻月日志，自动汇总。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-11.png?v=20261116-current" alt="11 预算统计：完整月历核对工时，按月汇总已保存预算。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-12.png" alt="12 打开官网：点击面板右上角官网按钮，回到插件官网。" width="1020" height="1020" loading="lazy">
+            <img src="assets/comic-guide-12.png?v=20261116-current" alt="12 打开官网：点击面板右上角官网按钮，回到插件官网。" width="1020" height="1020" loading="lazy">
           </li>
         </ol>
       </section>
@@ -175,7 +176,7 @@
       <section class="manual section-band" id="manual">
         <div class="section-heading">
           <h2>插件使用手册</h2>
-          <p>按工具面板左侧四个功能整理，进入对应业务页面后打开面板即可使用。</p>
+          <p>拖动标题栏移动面板，拖动边框或四角调整大小；窗口位置、大小和区域折叠状态会自动记住。</p>
         </div>
 
         <div class="manual-layout">
@@ -208,7 +209,36 @@
               </div>
             </div>
           </article>
-
+          <article class="manual-card">
+            <header>
+              <span class="manual-icon"><svg aria-hidden="true"><use href="#icon-wallet"></use></svg></span>
+              <div>
+                <h3>预算统计</h3>
+                <p>用于读取任务预算和日志明细，按月份保存预算并汇总金额。</p>
+              </div>
+            </header>
+            <div class="manual-body">
+              <div class="manual-block">
+                <strong>使用步骤</strong>
+                <ol>
+                  <li>先打开整月日志页，让插件读取当月日志，并在「常驻月日志」中点击「保存常驻」。</li>
+                  <li>进入任务详情页，切换到「预算统计」。</li>
+                  <li>确认项目名称、任务名称和预算金额已经读取出来。</li>
+                  <li>点击当前任务卡片中的「保存」。</li>
+                  <li>在「已保存预算」中查看当月预算列表和合计金额。</li>
+                </ol>
+              </div>
+              <div class="manual-block manual-note">
+                <strong>特殊情况</strong>
+                <ul>
+                  <li>预算为 0 时会弹出确认，建议先核对任务预算信息是否遗漏。</li>
+                  <li>跨月任务会按当月工时占总工时的比例分摊预算，保存前会显示确认信息。</li>
+                  <li>常驻月日志可按年月切换，也可以删除不再需要的月份记录。</li>
+                  <li>月历默认完整显示，也可以收起为月份与工时摘要。</li>
+                </ul>
+              </div>
+            </div>
+          </article>
           <article class="manual-card">
             <header>
               <span class="manual-icon"><svg aria-hidden="true"><use href="#icon-file"></use></svg></span>
@@ -238,7 +268,6 @@
               </div>
             </div>
           </article>
-
           <article class="manual-card">
             <header>
               <span class="manual-icon"><svg aria-hidden="true"><use href="#icon-calculator"></use></svg></span>
@@ -264,36 +293,7 @@
                   <li>已保存过的任务会显示为「已保存」，避免重复保存。</li>
                   <li>已填工时超过预计工时时，百分比会继续显示，便于发现超工时。</li>
                   <li>读取不到任务时，先确认当前页面是否包含任务名称、设计师和预计工时。</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="manual-card">
-            <header>
-              <span class="manual-icon"><svg aria-hidden="true"><use href="#icon-wallet"></use></svg></span>
-              <div>
-                <h3>预算计算器</h3>
-                <p>用于读取任务预算和日志明细，按月份保存预算并汇总金额。</p>
-              </div>
-            </header>
-            <div class="manual-body">
-              <div class="manual-block">
-                <strong>使用步骤</strong>
-                <ol>
-                  <li>先打开整月日志页，让插件读取当月日志，并在「常驻月日志」中点击「保存常驻」。</li>
-                  <li>进入任务详情页，切换到「预算计算器」。</li>
-                  <li>确认项目名称、任务名称和预算金额已经读取出来。</li>
-                  <li>点击当前任务卡片中的「保存」。</li>
-                  <li>在「已保存预算」中查看当月预算列表和合计金额。</li>
-                </ol>
-              </div>
-              <div class="manual-block manual-note">
-                <strong>特殊情况</strong>
-                <ul>
-                  <li>预算为 0 时会弹出确认，建议先核对任务预算信息是否遗漏。</li>
-                  <li>跨月任务会按当月工时占总工时的比例分摊预算，保存前会显示确认信息。</li>
-                  <li>常驻月日志可按年月切换，也可以删除不再需要的月份记录。</li>
+                  <li>读取任务区域可以收起，给已保存任务列表留出更多空间。</li>
                 </ul>
               </div>
             </div>
@@ -302,7 +302,7 @@
 
         <div class="manual-footer-note">
           <svg aria-hidden="true"><use href="#icon-shield"></use></svg>
-          <p>所有月报、文案、任务和预算记录默认保存到当前 Chrome 浏览器本地存储中；公开网页仅提供说明与下载，不会上传你的业务数据。</p>
+          <p>所有月报、文案、任务和预算记录保存在当前 Chrome 或 Edge 的扩展本地存储中；官网不接收你的业务数据。</p>
         </div>
       </section>
 
@@ -328,7 +328,7 @@
               <li>在地址栏输入 <code>chrome://extensions/</code> 并回车。</li>
               <li>打开右上角「开发者模式」。</li>
               <li>点击「加载已解压的扩展程序」，选择包含 <code>manifest.json</code> 的解压文件夹。</li>
-              <li>安装完成后，在扩展图标菜单中固定「新点小工具」，方便日常打开。</li>
+              <li>安装完成后，在扩展图标菜单中固定「新点小工具」；更新时覆盖原安装目录，再到扩展页点击「重新加载」。</li>
             </ol>
           </article>
 
@@ -365,7 +365,7 @@
           <div>
             <h2>为真实流程做的小工具</h2>
             <p>
-              新点小工具 V1.01 运行在浏览器当前页面，数据默认存放在 Chrome 本地存储中。它更像一个贴在工作台旁边的小面板，
+              新点小工具 V1.01 运行在浏览器当前页面，数据默认存放在当前 Chrome 或 Edge 的扩展本地存储中。它更像一个贴在工作台旁边的小面板，
               帮你把每日记录、月度汇总、常用文案和预算核算收束到同一个入口。
             </p>
           </div>
@@ -387,7 +387,7 @@
         <p>Chrome 扩展 · 浮动工具面板 · 提升 OA 与项目管理效率</p>
         <p class="footer-author">新点软件 · 工具推广</p>
       </div>
-      <a class="footer-download" href="downloads/新点小工具V1.01.zip?v=20260731-v101" download="新点小工具V1.01.zip">
+      <a class="footer-download" href="downloads/新点小工具V1.01.zip?v=20261116-current" download="新点小工具V1.01.zip">
         <svg aria-hidden="true"><use href="#icon-download"></use></svg>
         下载插件
       </a>
@@ -483,6 +483,6 @@
       </symbol>
     </svg>
 
-    <script src="app.js" defer></script>
+    <script src="app.js?v=20261116-current" defer></script>
   </body>
 </html>

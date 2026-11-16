@@ -3,6 +3,15 @@ const menuButton = document.querySelector("[data-menu-button]");
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
 const toast = document.querySelector("[data-toast]");
 
+const previewFrame = document.querySelector(".plugin-preview-frame");
+if (previewFrame) {
+  const resizePreview = () => {
+    previewFrame.style.transform = `scale(${Math.min(1, previewFrame.parentElement.clientWidth / 800)})`;
+  };
+  new ResizeObserver(resizePreview).observe(previewFrame.parentElement);
+  resizePreview();
+}
+
 const showToast = message => {
   if (!toast) return;
   toast.textContent = message;
@@ -21,10 +30,15 @@ setHeaderState();
 menuButton?.addEventListener("click", () => {
   const isOpen = document.body.classList.toggle("nav-open");
   menuButton.setAttribute("aria-label", isOpen ? "关闭导航" : "打开导航");
+  menuButton.setAttribute("aria-expanded", String(isOpen));
 });
 
 navLinks.forEach(link => {
-  link.addEventListener("click", () => document.body.classList.remove("nav-open"));
+  link.addEventListener("click", () => {
+    document.body.classList.remove("nav-open");
+    menuButton?.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute("aria-label", "打开导航");
+  });
 });
 
 const sections = navLinks
