@@ -19,6 +19,7 @@
   --shadow-lg: 0 24px 60px rgba(24, 39, 75, 0.16);
   --radius: 8px;
   --content: 1320px;
+  --site-header-height: 74px;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif;
 }
 
@@ -28,6 +29,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--site-header-height);
 }
 
 body {
@@ -81,7 +83,7 @@ svg {
   border-bottom: 1px solid var(--border-soft);
   display: flex;
   gap: 26px;
-  height: 74px;
+  height: var(--site-header-height);
   justify-content: space-between;
   left: 0;
   padding: 0 max(24px, calc((100vw - var(--content)) / 2));
@@ -2009,8 +2011,11 @@ code {
 }
 
 @media (max-width: 860px) {
+  :root {
+    --site-header-height: 66px;
+  }
+
   .site-header {
-    height: 66px;
     padding: 0 18px;
   }
 
@@ -2027,7 +2032,7 @@ code {
     left: 0;
     position: fixed;
     right: 0;
-    top: 66px;
+    top: var(--site-header-height);
   }
 
   body.nav-open .site-nav,
