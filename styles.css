@@ -1318,8 +1318,7 @@ main {
 .comic-card {
   --comic-paper: #edf6ff;
   aspect-ratio: 1;
-  background: var(--comic-paper);
-  border-radius: 14px;
+  border-radius: 4.2%;
   box-shadow:
     0 18px 34px rgba(37, 99, 235, 0.08),
     0 4px 12px rgba(15, 23, 42, 0.04);
@@ -1329,11 +1328,11 @@ main {
   container-type: inline-size;
 }
 
-.comic-card[data-paper="sky"] { --comic-paper: #daebfb; }
-.comic-card[data-paper="parchment"] { --comic-paper: #fcf4e1; }
-.comic-card[data-paper="mint"] { --comic-paper: #e6f9ec; }
-.comic-card[data-paper="rose"] { --comic-paper: #fae9f0; }
-.comic-card[data-paper="ice"] { --comic-paper: #def0fd; }
+.comic-card[data-paper="sky"] { --comic-paper: #daebfb; --comic-caption-paper: #dfeffb; }
+.comic-card[data-paper="parchment"] { --comic-paper: #fcf4e1; --comic-caption-paper: #fdf5e4; }
+.comic-card[data-paper="mint"] { --comic-paper: #e6f9ec; --comic-caption-paper: #e5f9ea; }
+.comic-card[data-paper="rose"] { --comic-paper: #fae9f0; --comic-caption-paper: #fbeaf0; }
+.comic-card[data-paper="ice"] { --comic-paper: #def0fd; --comic-caption-paper: #def0fc; }
 .comic-card[data-paper="green"] { --comic-paper: #effaf3; }
 .comic-card[data-paper="cream"] { --comic-paper: #fff8e8; }
 
@@ -1344,23 +1343,45 @@ main {
   width: 100%;
 }
 
-/* Cover the old lettering while leaving the illustration and frame intact. */
-.comic-card::before {
-  background: var(--comic-paper);
+/* Rounded covers follow the printed frame and stay clear of the illustration. */
+.comic-card::before,
+.comic-card::after {
   content: "";
-  inset: 1.2% 29% auto 1.6%;
-  height: 15.3%;
   pointer-events: none;
   position: absolute;
   z-index: 1;
 }
 
-/* Feather the edges only on cards with illustrated paper textures. */
+.comic-card::before {
+  background: var(--comic-paper);
+  border-radius: 4.2cqi;
+  height: 15.3%;
+  inset: 1.2% 29% auto 1.6%;
+}
+
+.comic-card::after {
+  background: var(--comic-caption-paper, var(--comic-paper));
+  border-radius: 2.4cqi;
+  inset: 91.3% 2.6% 1.9%;
+}
+
+/* Feather only the covers that sit on textured paper. */
 .comic-card:is([data-paper="sky"], [data-paper="parchment"], [data-paper="mint"], [data-paper="rose"], [data-paper="ice"])::before {
   height: 17.8%;
   mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 90%, transparent),
     linear-gradient(transparent, #000 7%, #000 87%, transparent);
   mask-composite: intersect;
+}
+
+.comic-card:is([data-paper="sky"], [data-paper="parchment"], [data-paper="mint"], [data-paper="rose"], [data-paper="ice"])::after {
+  top: 89%;
+  mask-image: linear-gradient(90deg, transparent, #000 2%, #000 98%, transparent),
+    linear-gradient(transparent, #000 13%, #000 88%, transparent);
+  mask-composite: intersect;
+}
+
+.comic-card[data-paper="ice"]::after {
+  inset: 78.8% 5.2% 5.5% 43.6%;
 }
 
 .comic-card-heading {
@@ -1391,11 +1412,40 @@ main {
   font-variant-numeric: tabular-nums;
   justify-content: center;
   line-height: 1;
+  /* Center the visible numerals, whose font baseline sits below the box center. */
+  padding-block-end: 0.12em;
 }
 
 .comic-card-title {
   min-width: 0;
   overflow-wrap: anywhere;
+}
+
+.comic-card-caption {
+  bottom: 3.9%;
+  color: #142033;
+  font-size: 4.3cqi;
+  font-weight: 700;
+  left: 4.1%;
+  line-height: 1.2;
+  margin: 0;
+  overflow-wrap: anywhere;
+  position: absolute;
+  right: 3.2%;
+  z-index: 2;
+}
+
+.comic-card[data-paper="sky"] .comic-card-caption {
+  bottom: 4.6%;
+  left: 4.9%;
+}
+
+.comic-card[data-paper="ice"] .comic-card-caption {
+  bottom: 7.7%;
+  font-size: 4.6cqi;
+  left: 45%;
+  line-height: 1.35;
+  right: 6%;
 }
 
 .manual-layout {
@@ -2297,10 +2347,6 @@ code {
 
   .comic-grid {
     gap: 9px;
-  }
-
-  .comic-card {
-    border-radius: 10px;
   }
 
   .about-facts {
