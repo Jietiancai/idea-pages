@@ -13,7 +13,7 @@
     <meta property="og:description" content="Chrome 扩展浮动工具面板，覆盖日常记录、文案、计算与预算管理。">
     <meta property="og:image" content="assets/icon128.png">
     <link rel="icon" href="assets/icon48.png">
-    <link rel="stylesheet" href="styles.css?v=v102-nav">
+    <link rel="stylesheet" href="styles.css?v=v102-comics">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -133,42 +133,55 @@
           <p>从安装到常用功能，12 格图解对应当前插件的使用流程。</p>
         </div>
 
-        <ol class="comic-grid" aria-label="新点小工具 12 格图解教程">
-          <li class="comic-card">
-            <img src="assets/comic-guide-01.png?v=v102" alt="01 下载插件：官网点击下载，拿到新点小工具 V1.02.zip。" width="1020" height="1020" loading="lazy">
+        <!-- 编辑下方各格的 comic-card-number（编号）和 comic-card-title（标题），图片无需重做。 -->
+        <ol class="comic-grid" role="list" aria-label="新点小工具 12 格图解教程">
+          <li class="comic-card" data-paper="sky">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">01</span> <span class="comic-card-title">下载插件</span></h3>
+            <img src="assets/comic-guide-01.png?v=v102" alt="官网点击下载，拿到新点小工具 V1.02.zip。" width="1020" height="1020" loading="lazy">
+          </li>
+          <li class="comic-card" data-paper="parchment">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">02</span> <span class="comic-card-title">解压文件</span></h3>
+            <img src="assets/comic-guide-02.png?v=v102" alt="先解压，保留含 manifest.json 的文件夹。" width="1020" height="1020" loading="lazy">
+          </li>
+          <li class="comic-card" data-paper="mint">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">03</span> <span class="comic-card-title">打开扩展页</span></h3>
+            <img src="assets/comic-guide-03.png?v=v102" alt="Chrome 或 Edge 进入扩展管理页面。" width="1020" height="1020" loading="lazy">
+          </li>
+          <li class="comic-card" data-paper="rose">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">04</span> <span class="comic-card-title">加载扩展</span></h3>
+            <img src="assets/comic-guide-04.png?v=v102" alt="打开开发者模式，加载已解压的扩展。" width="1020" height="1020" loading="lazy">
+          </li>
+          <li class="comic-card" data-paper="ice">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">05</span> <span class="comic-card-title">固定入口</span></h3>
+            <img src="assets/comic-guide-05.png?v=v102" alt="把新点小工具固定到浏览器工具栏。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-02.png?v=v102" alt="02 解压文件：先解压，保留含 manifest.json 的文件夹。" width="1020" height="1020" loading="lazy">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">06</span> <span class="comic-card-title">呼出面板</span></h3>
+            <img src="assets/comic-guide-06.png?v=v102" alt="点击插件图标，浮动面板出现在页面旁。" width="1020" height="1020" loading="lazy">
+          </li>
+          <li class="comic-card" data-paper="green">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">07</span> <span class="comic-card-title">工时统计</span></h3>
+            <img src="assets/comic-guide-07.png?v=v102" alt="查看标准工作天数、实际填工时和差额。" width="1020" height="1020" loading="lazy">
+          </li>
+          <li class="comic-card" data-paper="cream">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">08</span> <span class="comic-card-title">保存月报</span></h3>
+            <img src="assets/comic-guide-08.png?v=v102" alt="保存月报后，可查看历史并下载表格。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-03.png?v=v102" alt="03 打开扩展页：Chrome 或 Edge 进入扩展管理页面。" width="1020" height="1020" loading="lazy">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">09</span> <span class="comic-card-title">快速文案</span></h3>
+            <img src="assets/comic-guide-09.png?v=v102" alt="管理常用文案，搜索后复制或一键填入。" width="1020" height="1020" loading="lazy">
+          </li>
+          <li class="comic-card" data-paper="green">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">10</span> <span class="comic-card-title">工时计算器</span></h3>
+            <img src="assets/comic-guide-10.png?v=v102" alt="读取设计任务，保存后计算填写进度。" width="1020" height="1020" loading="lazy">
+          </li>
+          <li class="comic-card" data-paper="cream">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">11</span> <span class="comic-card-title">预算统计</span></h3>
+            <img src="assets/comic-guide-11.png?v=v102" alt="完整月历核对工时，按月汇总已保存预算。" width="1020" height="1020" loading="lazy">
           </li>
           <li class="comic-card">
-            <img src="assets/comic-guide-04.png?v=v102" alt="04 加载扩展：打开开发者模式，加载已解压的扩展。" width="1020" height="1020" loading="lazy">
-          </li>
-          <li class="comic-card">
-            <img src="assets/comic-guide-05.png?v=v102" alt="05 固定入口：把新点小工具固定到浏览器工具栏。" width="1020" height="1020" loading="lazy">
-          </li>
-          <li class="comic-card">
-            <img src="assets/comic-guide-06.png?v=v102" alt="06 呼出面板：点击插件图标，浮动面板出现在页面旁。" width="1020" height="1020" loading="lazy">
-          </li>
-          <li class="comic-card">
-            <img src="assets/comic-guide-07.png?v=v102" alt="07 工时统计：查看标准工作天数、实际填工时和差额。" width="1020" height="1020" loading="lazy">
-          </li>
-          <li class="comic-card">
-            <img src="assets/comic-guide-08.png?v=v102" alt="08 保存月报：保存月报后，可查看历史并下载表格。" width="1020" height="1020" loading="lazy">
-          </li>
-          <li class="comic-card">
-            <img src="assets/comic-guide-09.png?v=v102" alt="09 快速文案：管理常用文案，搜索后复制或一键填入。" width="1020" height="1020" loading="lazy">
-          </li>
-          <li class="comic-card">
-            <img src="assets/comic-guide-10.png?v=v102" alt="10 工时计算器：读取设计任务，保存后计算填写进度。" width="1020" height="1020" loading="lazy">
-          </li>
-          <li class="comic-card">
-            <img src="assets/comic-guide-11.png?v=v102" alt="11 预算统计：完整月历核对工时，按月汇总已保存预算。" width="1020" height="1020" loading="lazy">
-          </li>
-          <li class="comic-card">
-            <img src="assets/comic-guide-12.png?v=v102" alt="12 打开官网：点击面板右上角官网按钮，回到插件官网。" width="1020" height="1020" loading="lazy">
+            <h3 class="comic-card-heading"><span class="comic-card-number" aria-hidden="true">12</span> <span class="comic-card-title">打开官网</span></h3>
+            <img src="assets/comic-guide-12.png?v=v102" alt="点击面板右上角官网按钮，回到插件官网。" width="1020" height="1020" loading="lazy">
           </li>
         </ol>
       </section>

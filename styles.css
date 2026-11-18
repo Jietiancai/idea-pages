@@ -1316,8 +1316,9 @@ main {
 }
 
 .comic-card {
+  --comic-paper: #edf6ff;
   aspect-ratio: 1;
-  background: #ffffff;
+  background: var(--comic-paper);
   border-radius: 14px;
   box-shadow:
     0 18px 34px rgba(37, 99, 235, 0.08),
@@ -1325,13 +1326,76 @@ main {
   margin: 0;
   overflow: hidden;
   position: relative;
+  container-type: inline-size;
 }
+
+.comic-card[data-paper="sky"] { --comic-paper: #daebfb; }
+.comic-card[data-paper="parchment"] { --comic-paper: #fcf4e1; }
+.comic-card[data-paper="mint"] { --comic-paper: #e6f9ec; }
+.comic-card[data-paper="rose"] { --comic-paper: #fae9f0; }
+.comic-card[data-paper="ice"] { --comic-paper: #def0fd; }
+.comic-card[data-paper="green"] { --comic-paper: #effaf3; }
+.comic-card[data-paper="cream"] { --comic-paper: #fff8e8; }
 
 .comic-card img {
   display: block;
   height: 100%;
   object-fit: cover;
   width: 100%;
+}
+
+/* Cover the old lettering while leaving the illustration and frame intact. */
+.comic-card::before {
+  background: var(--comic-paper);
+  content: "";
+  inset: 1.2% 29% auto 1.6%;
+  height: 15.3%;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Feather the edges only on cards with illustrated paper textures. */
+.comic-card:is([data-paper="sky"], [data-paper="parchment"], [data-paper="mint"], [data-paper="rose"], [data-paper="ice"])::before {
+  height: 17.8%;
+  mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 90%, transparent),
+    linear-gradient(transparent, #000 7%, #000 87%, transparent);
+  mask-composite: intersect;
+}
+
+.comic-card-heading {
+  align-items: center;
+  color: #111827;
+  display: flex;
+  font-size: 7.2cqi;
+  font-weight: 800;
+  gap: 3.6cqi;
+  left: 4.2%;
+  line-height: 1.12;
+  margin: 0;
+  position: absolute;
+  right: 19%;
+  top: 2.8%;
+  z-index: 2;
+}
+
+.comic-card-number {
+  align-items: center;
+  aspect-ratio: 1;
+  background: #102440;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 12.8cqi;
+  font-size: 6.9cqi;
+  font-variant-numeric: tabular-nums;
+  justify-content: center;
+  line-height: 1;
+}
+
+.comic-card-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .manual-layout {
